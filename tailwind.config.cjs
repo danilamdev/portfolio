@@ -6,7 +6,7 @@ module.exports = {
 			fontFamily: {
 				'poppins': 'poppins',
 				'jetbrains': 'jetbrains mono'
-			}
+			},
 		},
 	},
 	plugins: [],
