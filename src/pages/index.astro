@@ -1,47 +1,48 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
 import "../styles/base.css";
+
+import Layout from "../layouts/Layout.astro";
+import Shadows from "../components/shadows.astro";
+import Navigation from "../components/navigation.astro";
+
 import DownloadIcon from "../components/download-icon.astro";
+import blob from "/blob1.svg";
 ---
 
 <Layout title="Portfolio">
+  <Navigation />
   <main>
-    <section class="section section-home relative w-screen h-screen">
-      <span
-        class="block w-[200px] h-[550px] rotate-45 scale-125 blur-xl opacity-10 rounded-full bg-sky-400 absolute top-20 -left-24"
-      ></span>
-      <span
-        class="block w-[350px] h-[400px] scale-150 rotate-12 blur-xl opacity-10 rounded-full bg-emerald-500 absolute bottom-40 -right-32"
-      ></span>
-
+    <section id="home" class="section section-home relative w-screen h-screen">
+      <Shadows />
       <div
-        class="w-5/6 max-w-[1750px] pt-56 m-auto grid grid-cols-[2fr_1fr] gap-10"
+        class="w-5/6 max-w-[1750px] pt-56 m-auto grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-10"
       >
         <div class="items-start left-side flex flex-col gap-10 justify-center">
           <h1
-            class="text-9xl font-bold font-poppins text-slate-800 leading-[1.2em]"
+            class="text-6xl 2xl:text-9xl font-bold font-poppins text-slate-800 leading-[1.2em]"
           >
             <span class="text-indigo-400 font-normal">{"<"}</span>Hola! <br /> soy
             Daniel<span class="text-indigo-400 font-normal">{"/>"}</span>
           </h1>
-          <p class="text-slate-400 font-poppins leading-8 mb-16 text-lg">
+          <p
+            class="text-slate-400 font-poppins mb-16 2xl:text-lg text-sm 2xl:leading-8"
+          >
             Soy desarrollador fullstack de Argentina. <br /> Me gusta encontrar soluciones
             prácticas que ayuden a potenciar <br /> la marca del cliente a través
             del desarrollo y el diseño.
           </p>
           <div
-            class="home-buttons grid grid-cols-2 gap-4 w-11/12 max-w-2xl ml-12"
+            class="home-buttons grid grid-cols-2 gap-4 lg:max-w-2xl 2xl:ml-12 ml-0 sm:w-4/5 w-full"
           >
             <a
               href="#"
-              class="text-lg block text-center bg-white py-3 rounded-xl shadow-xl shadow-indigo-200/20 text-slate-500 active:scale-95 hover:shadow-indigo-200/60 transition-all"
+              class="text-md 2xl:text-lg block text-center bg-white py-3 rounded-xl shadow-xl shadow-indigo-200/20 text-slate-500 active:scale-95 hover:shadow-indigo-200/60 transition-all"
               >Contactame</a
             >
             <a
               href="https://drive.google.com/file/d/1u2hjxGtpr0okl9LhMhjjevRkppVHIGDf/view?usp=share_link"
               target="_blank"
-              class="group flex justify-center gap-4 text-lg active:scale-95 text-center bg-gradient-to-r from-blue-400 to-teal-300 py-3 rounded-xl text-white transition-all"
+              class="group flex justify-center gap-4 text-md 2xl:text-lg active:scale-95 text-center bg-gradient-to-r from-blue-400 to-teal-300 py-3 rounded-xl text-white transition-all"
             >
               <span
                 class="animate-icon group-hover:animate-[wiggle_1s_forwards]"
@@ -53,10 +54,15 @@ import DownloadIcon from "../components/download-icon.astro";
           </div>
         </div>
 
-        <div class="right-side xl:flex hidden xl:justify-end">
+        <div class="right-side lg:flex hidden xl:justify-end">
           <div
-            class="image-me isolate w-96 border-none h-[600px] my-auto border rounded-xl relative"
+            class="image-me isolate w-96 border-none 2xl:h-[600px] h-[300px] my-auto border rounded-xl relative"
           >
+            <img
+              src={blob}
+              alt="blob"
+              class="w-48 absolute -right-20 -bottom-16 -z-10"
+            />
             <img
               class="object-cover w-full h-full rounded-2xl"
               src="/foto.jpg"
@@ -83,7 +89,7 @@ import DownloadIcon from "../components/download-icon.astro";
   .section-home {
     background-image: url("/texture.jpg");
     background-size: cover;
-    background-color: #b3c3d6;
+    background-color: #b7b1eb;
     background-blend-mode: screen;
   }
 

@@ -1,0 +1,110 @@
+---
+import logo from "/logo.svg";
+import github from "/icons/github.svg";
+import linkedin from "/icons/linkedin.svg";
+---
+
+<header
+  class="backdrop-blur-lg fixed top-0 left-0 w-screen h-14 z-50 bg-white/10"
+>
+  <nav
+    class="w-5/6 max-w-[1750px] mx-auto h-full flex justify-between items-center"
+  >
+    <a href="#home"
+      ><img src={logo} alt="imagen del logo del sitio" class="w-9" /></a
+    >
+    <ul
+      class="relative lg:flex lg:justify-between hidden max-w-lg w-1/2 h-full items-center text-slate-700"
+    >
+      <li><a href="#" class="active">Sobre mi</a></li>
+      <li><a href="#">proyectos</a></li>
+      <li><a href="#">skills</a></li>
+      <li><a href="#">contacto</a></li>
+      <div
+        class="indicator absolute bg-gradient-to-r from-sky-300 to-emerald-200 bottom-0 left-0 h-1 rounded-xl"
+      >
+      </div>
+    </ul>
+    <div class="flex items-center w-20 h-full justify-between">
+      <a
+        href="https://github.com/danilamdev/"
+        class="w-6 github relative"
+        target="_blank"
+        ><img class="w-6" src={github} alt="icono de github" /></a
+      >
+      <a
+        href="https://www.linkedin.com/in/danilamdev/"
+        target="_blank"
+        class="w-6 linkedin relative"
+        ><img class="w-6" src={linkedin} alt="icono de linkedin" /></a
+      >
+    </div>
+  </nav>
+</header>
+
+<script>
+  const list = document.querySelector("ul");
+  const indicator = document.querySelector(".indicator") as HTMLDivElement;
+  const anchors = document.querySelectorAll("ul a");
+  const firstEL = list.firstElementChild.getBoundingClientRect().width;
+  let linkClicked = false;
+  indicator.style.width = firstEL + "px";
+
+  Array.from(anchors).forEach((item: HTMLElement, i: number) => {
+    console.log(indicator.style.left);
+    item.addEventListener("click", (e) => {
+      let elementWidth = item.getBoundingClientRect().width;
+      console.log("left", indicator.style.left);
+      console.log("offset", item.offsetLeft);
+
+      list.querySelector(".active").classList.remove("active");
+      item.classList.add("active");
+      indicator.style.left = item.offsetLeft + "px";
+      indicator.style.width = elementWidth + "px";
+      linkClicked = true;
+
+      setTimeout(() => {
+        linkClicked = false;
+      }, 500);
+    });
+  });
+</script>
+
+<style>
+  .active {
+    font-weight: bold;
+  }
+
+  .indicator {
+    transition: all 0.2s cubic-bezier(0.47, 0.25, 0.32, 1.01);
+  }
+
+  .github::after {
+    content: "";
+    background-color: rgb(218, 252, 239);
+    inset: -7px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -2;
+    opacity: 0;
+  }
+
+  .github:hover::after {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+  .linkedin::after {
+    content: "";
+    background-color: rgb(252, 238, 227);
+    inset: -7px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -2;
+    opacity: 0;
+  }
+
+  .linkedin:hover::after {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+</style>
