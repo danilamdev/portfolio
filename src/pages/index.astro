@@ -7,17 +7,18 @@ import DownloadIcon from "../components/download-icon.astro";
 
 <Layout title="Portfolio">
   <main>
-    <section class="section section-home relative">
+    <section class="section section-home relative w-screen h-screen">
       <span
         class="block w-[200px] h-[550px] rotate-45 scale-125 blur-xl opacity-10 rounded-full bg-sky-400 absolute top-20 -left-24"
       ></span>
       <span
-        class="block w-[350px] h-[400px] scale-125 rotate-12 blur-xl opacity-10 rounded-full bg-emerald-500 absolute bottom-40 right-0"
+        class="block w-[350px] h-[400px] scale-150 rotate-12 blur-xl opacity-10 rounded-full bg-emerald-500 absolute bottom-40 -right-32"
       ></span>
+
       <div
-        class="py-0 w-5/6 max-w-[1900px] h-3/4 m-auto grid grid-cols-2 gap-10"
+        class="w-5/6 max-w-[1750px] pt-56 m-auto grid grid-cols-[2fr_1fr] gap-10"
       >
-        <div class="left-side px-8 flex flex-col gap-8 justify-center">
+        <div class="items-start left-side flex flex-col gap-10 justify-center">
           <h1
             class="text-9xl font-bold font-poppins text-slate-800 leading-[1.2em]"
           >
@@ -38,7 +39,8 @@ import DownloadIcon from "../components/download-icon.astro";
               >Contactame</a
             >
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1u2hjxGtpr0okl9LhMhjjevRkppVHIGDf/view?usp=share_link"
+              target="_blank"
               class="group flex justify-center gap-4 text-lg active:scale-95 text-center bg-gradient-to-r from-blue-400 to-teal-300 py-3 rounded-xl text-white transition-all"
             >
               <span
@@ -51,18 +53,36 @@ import DownloadIcon from "../components/download-icon.astro";
           </div>
         </div>
 
-        <div class="right-side border border-green-700"></div>
+        <div class="right-side xl:flex hidden xl:justify-end">
+          <div
+            class="image-me isolate w-96 border-none h-[600px] my-auto border rounded-xl relative"
+          >
+            <img
+              class="object-cover w-full h-full rounded-2xl"
+              src="/foto.jpg"
+              alt="foto personal Daniel Lambarri"
+            />
+          </div>
+        </div>
       </div>
     </section>
   </main>
 </Layout>
 
 <style>
-  .section {
-    height: 100vh;
+  .image-me::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    transform: translate(20px, -20px);
+    border-radius: 15px;
+    border: 1px solid rgb(159, 169, 179);
+    z-index: -1;
   }
+
   .section-home {
     background-image: url("/texture.jpg");
+    background-size: cover;
     background-color: #b3c3d6;
     background-blend-mode: screen;
   }
