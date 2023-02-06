@@ -10,39 +10,56 @@ import blob from "/blob1.svg";
 ---
 
 <Layout title="Portfolio">
+  <p
+    class="absolute hidden lg:block 2xl:text-[800px] text-slate-50 mix-blend-multiply -bottom-32 -right-20 z-10"
+  >
+    DEV
+  </p>
   <Navigation />
   <main>
-    <section id="home" class="section section-home relative w-screen h-screen">
+    <section id="home" class="section section-home">
       <Shadows />
       <div
-        class="w-5/6 max-w-[1750px] pt-56 m-auto grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-10"
+        class="lg:w-5/6 w-11/12 max-w-[1750px] pt-20 md:pt-52 m-auto grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-1"
       >
         <div class="items-start left-side flex flex-col gap-10 justify-center">
+          <div
+            class="w-28 h-28 rounded-full mx-auto overflow-hidden mb-8 md:hidden shadow-lg shadow-teal-800/30"
+          >
+            <img
+              class="object-cover w-full h-full"
+              src="/foto.jpg"
+              alt="foto personal Daniel Lambarri"
+            />
+          </div>
           <h1
-            class="text-6xl 2xl:text-9xl font-bold font-poppins text-slate-800 leading-[1.2em]"
+            class="text-5xl md:text-7xl 2xl:text-9xl font-bold font-poppins text-slate-800 leading-[1.2em]"
           >
             <span class="text-indigo-400 font-normal">{"<"}</span>Hola! <br /> soy
             Daniel<span class="text-indigo-400 font-normal">{"/>"}</span>
           </h1>
           <p
-            class="text-slate-400 font-poppins mb-16 2xl:text-lg text-sm 2xl:leading-8"
+            class="text-slate-400 font-poppins mb-16 2xl:text-lg text-sm 2xl:leading-8 leading-6"
           >
-            Soy desarrollador fullstack de Argentina. <br /> Me gusta encontrar soluciones
-            prácticas que ayuden a potenciar <br /> la marca del cliente a través
-            del desarrollo y el diseño.
+            Soy desarrollador <span
+              class="text-indigo-500 underline decoration-wavy">fullstack</span
+            >
+            de Argentina. <br /> Me gusta encontrar soluciones prácticas que ayuden
+            a potenciar <br /> la marca del cliente a través del desarrollo y el
+            diseño.
           </p>
           <div
-            class="home-buttons grid grid-cols-2 gap-4 lg:max-w-2xl 2xl:ml-12 ml-0 sm:w-4/5 w-full"
+            class="home-buttons grid grid-cols-2 z-40 gap-4 lg:max-w-2xl 2xl:ml-12 ml-0 sm:w-4/5 w-full"
           >
             <a
               href="#"
-              class="text-md 2xl:text-lg block text-center bg-white py-3 rounded-xl shadow-xl shadow-indigo-200/20 text-slate-500 active:scale-95 hover:shadow-indigo-200/60 transition-all"
+              class="text-sm 2xl:text-lg block text-center bg-white py-3 rounded-xl shadow-xl shadow-indigo-200/20 text-slate-500 active:scale-95 hover:shadow-indigo-200/60 transition-all"
               >Contactame</a
             >
             <a
               href="https://drive.google.com/file/d/1u2hjxGtpr0okl9LhMhjjevRkppVHIGDf/view?usp=share_link"
               target="_blank"
-              class="group flex justify-center gap-4 text-md 2xl:text-lg active:scale-95 text-center bg-gradient-to-r from-blue-400 to-teal-300 py-3 rounded-xl text-white transition-all"
+              class="group flex justify-center gap-2 text-sm 2xl:text-lg active:scale-95 text-center bg-gradient-to-r from-blue-400 to-teal-300 py-3 rounded-xl text-white transition-all"
             >
               <span
                 class="animate-icon group-hover:animate-[wiggle_1s_forwards]"
@@ -56,7 +73,7 @@ import blob from "/blob1.svg";
 
         <div class="right-side lg:flex hidden xl:justify-end">
           <div
-            class="image-me isolate w-96 border-none 2xl:h-[600px] h-[300px] my-auto border rounded-xl relative"
+            class="image-me z-20 2xl:w-96 w-64 border-none 2xl:h-[600px] h-[300px] my-auto border rounded-xl relative"
           >
             <img
               src={blob}
@@ -70,6 +87,16 @@ import blob from "/blob1.svg";
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section bg-slate-50">
+      <div class="lg:w-5/6 w-11/12 max-w-[1750px] h-full mx-auto pt-32">
+        <h2
+          class="project-title w-max mx-auto text-slate-700 font-bold text-7xl text-center font-poppins relative"
+        >
+          Proyectos
+        </h2>
       </div>
     </section>
   </main>
@@ -86,6 +113,12 @@ import blob from "/blob1.svg";
     z-index: -1;
   }
 
+  .section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
   .section-home {
     background-image: url("/texture.jpg");
     background-size: cover;
@@ -99,6 +132,17 @@ import blob from "/blob1.svg";
     height: 24px;
 
     color: white;
+  }
+
+  .project-title::after {
+    content: "";
+    position: absolute;
+    top: -0.3em;
+    left: 0;
+    width: 80px;
+    height: 15px;
+    background-color: rgb(120, 195, 238);
+    border-radius: 35px;
   }
 
   @keyframes wiggle {

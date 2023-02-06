@@ -1,0 +1,16 @@
+{
+  "header": {
+    "navlink1": "about me",
+    "navlink2": "projects",
+    "navlink3": "skills",
+    "navlink4": "contact"
+  },
+  "home": {
+    "title1": "Hi!",
+    "title2": "I´m Daniel",
+    "subtitle1": "Fullstack developer from Argentina",
+    "subtitle2": "I like to find practical solutions that help enhance the client's brand through development and design.",
+    "btn1": "contact me",
+    "btn2": "Download CV"
+  }
+}

@@ -6,6 +6,6 @@
 
 @layer base {
   html {
-    @apply font-jetbrains overflow-hidden
+    @apply font-jetbrains overflow-x-hidden
   }
 }
