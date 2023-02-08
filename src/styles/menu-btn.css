@@ -1,0 +1,11 @@
+.menu-bg {
+  clip-path: circle(30% at 100% 0%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.menu-bg.open {
+  clip-path: circle(100% at 100% 20%);
+  visibility: visible;
+  pointer-events: all;
+}

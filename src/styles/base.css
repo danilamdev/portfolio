@@ -8,4 +8,11 @@
   html {
     @apply font-jetbrains overflow-x-hidden
   }
+
+  body {
+    height: 100vh;
+  }
+  body.no-scroll {
+    overflow-y: hidden ;
+  }
 }

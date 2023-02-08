@@ -2,13 +2,14 @@
 import logo from "/logo.svg";
 import github from "/icons/github.svg";
 import linkedin from "/icons/linkedin.svg";
+import MenuBtn from "./MenuBtn";
 ---
 
 <header
   class="backdrop-blur-lg fixed top-0 left-0 w-screen h-14 z-50 bg-white/60"
 >
   <nav
-    class="lg:w-5/6 w-10/12 max-w-[1750px] mx-auto h-full flex justify-between items-center"
+    class="lg:w-5/6 w-11/12 max-w-[1750px] mx-auto h-full flex justify-between items-center"
   >
     <a href="#home"
       ><img src={logo} alt="imagen del logo del sitio" class="w-9" />
@@ -16,31 +17,42 @@ import linkedin from "/icons/linkedin.svg";
     <ul
       class="relative lg:flex lg:justify-between hidden max-w-lg w-1/2 h-full items-center text-slate-700"
     >
-      <li><a href="#home" class="active hover:text-teal-500">Sobre mi</a></li>
+      <li>
+        <a href="#home" class="active hover:text-teal-500">Home</a>
+      </li>
+      <li>
+        <a href="#about-me" class="hover:text-teal-500">Sobre mi</a>
+      </li>
       <li><a href="#projects" class="hover:text-teal-500">proyectos</a></li>
-      <li><a href="#" class="hover:text-teal-500">skills</a></li>
-      <li><a href="#" class="hover:text-teal-500">contacto</a></li>
+      <li><a href="#skills" class="hover:text-teal-500">skills</a></li>
+      <li><a href="#contact" class="hover:text-teal-500">contacto</a></li>
       <div
+        role="none"
         class="indicator absolute bg-gradient-to-r from-sky-300 to-emerald-200 bottom-0 left-0 h-1 rounded-xl"
       >
       </div>
     </ul>
-    <div class="flex items-center w-20 h-full justify-between">
+    <div
+      role="list"
+      class="flex items-center gap-4 md:w-20 w-32 h-full justify-between md:gap-2"
+    >
       <a
         href="https://github.com/danilamdev/"
         class="w-6 github relative"
         target="_blank"
-        ><img class="w-6" src={github} alt="icono de github" /></a
+        ><img class="w-6" src={github} alt="imagen de icono de github" /></a
       >
       <a
         href="https://www.linkedin.com/in/danilamdev/"
         target="_blank"
         class="w-6 linkedin relative"
-        ><img class="w-6" src={linkedin} alt="icono de linkedin" /></a
+        ><img class="w-6" src={linkedin} alt="imagen de icono de linkedin" /></a
       >
+      <MenuBtn client:load />
     </div>
   </nav>
 </header>
+<div class="menu-backdrop"></div>
 
 <script>
   const list = document.querySelector("ul");
