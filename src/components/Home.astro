@@ -1,0 +1,135 @@
+---
+import DownloadIcon from "../components/download-icon.astro";
+import blob from "/blob1.svg";
+import Shadows from "../components/shadows.astro";
+---
+
+<section id="home" class="section section-home">
+  <Shadows />
+  <div
+    class="lg:w-5/6 w-11/12 max-w-[1750px] pt-20 md:pt-52 m-auto grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-1"
+  >
+    <div
+      class="md:items-start items-center left-side flex flex-col gap-10 justify-center"
+    >
+      <div
+        class="w-28 h-28 rounded-full mx-auto overflow-hidden mb-8 md:hidden shadow-lg shadow-teal-800/30"
+      >
+        <img
+          class="object-cover w-full h-full"
+          src="/foto.jpg"
+          alt="foto personal Daniel Lambarri"
+        />
+      </div>
+      <h1
+        class="text-5xl md:text-7xl 2xl:text-9xl font-bold font-poppins text-slate-700 leading-[1.2em] mb-10"
+      >
+        <span class="text-indigo-400 font-normal">{"<"}</span>Hola! <br /> soy Daniel<span
+          class="text-indigo-400 font-normal">{"/>"}</span
+        >
+      </h1>
+      <p
+        class="text-slate-400 md:text-left text-center font-poppins mb-16 2xl:text-lg text-sm 2xl:leading-8 leading-6"
+      >
+        Soy desarrollador <span
+          class="text-indigo-500 underline decoration-wavy">fullstack</span
+        >
+        de Argentina. <br /> Me gusta encontrar soluciones prácticas que ayuden a
+        potenciar <br /> la marca del cliente a través del desarrollo y el diseño.
+      </p>
+      <div
+        class="home-buttons grid grid-cols-2 z-40 gap-4 lg:max-w-2xl 2xl:ml-12 ml-0 sm:w-4/5 w-full"
+      >
+        <a
+          href="#"
+          class="text-sm 2xl:text-lg block text-center bg-white py-3 rounded-xl shadow-xl shadow-indigo-200/20 text-slate-500 active:scale-95 hover:shadow-indigo-200/60 transition-all"
+          >Contactame</a
+        >
+        <a
+          href="https://drive.google.com/file/d/1u2hjxGtpr0okl9LhMhjjevRkppVHIGDf/view?usp=share_link"
+          target="_blank"
+          class="group flex justify-center gap-2 text-sm 2xl:text-lg active:scale-95 text-center bg-gradient-to-r from-blue-400 to-teal-300 py-3 rounded-xl text-white transition-all"
+        >
+          <span class="animate-icon group-hover:animate-[wiggle_1s_forwards]">
+            <DownloadIcon />
+          </span>
+          <span>Descargar cv</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="right-side lg:flex hidden xl:justify-end">
+      <div
+        class="image-me z-20 2xl:w-96 w-64 border-none 2xl:h-[600px] h-[300px] my-auto border rounded-xl relative"
+      >
+        <img
+          src={blob}
+          alt="blob"
+          class="w-48 absolute -right-20 -bottom-16 -z-10"
+        />
+        <img
+          class="object-cover w-full h-full rounded-2xl"
+          src="/foto.jpg"
+          alt="foto personal Daniel Lambarri"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .image-me::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    transform: translate(20px, -20px);
+    border-radius: 15px;
+    border: 1px solid rgb(159, 169, 179);
+    z-index: -1;
+  }
+
+  .section-home {
+    background-image: url("/texture.webp");
+    background-size: cover;
+    background-color: #b7b1eb;
+    background-blend-mode: screen;
+  }
+
+  .icon {
+    background-image: url("icons/download.svg");
+    width: 24px;
+    height: 24px;
+
+    color: white;
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: rotate(0);
+    }
+    15% {
+      transform: rotate(10deg);
+    }
+    30% {
+      transform: rotate(-10deg);
+    }
+    45% {
+      transform: rotate(7deg);
+    }
+    60% {
+      transform: rotate(-7deg);
+    }
+    75% {
+      transform: rotate(4deg);
+    }
+    85% {
+      transform: rotate(-4deg);
+    }
+    92% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+</style>
