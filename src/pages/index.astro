@@ -3,6 +3,8 @@ import "../styles/base.css";
 
 import Layout from "../layouts/Layout.astro";
 import Home from "../components/Home.astro";
+import About from "../components/about.astro";
+import Projects from "../components/projects.astro";
 import Navigation from "../components/navigation.astro";
 ---
 
@@ -15,30 +17,7 @@ import Navigation from "../components/navigation.astro";
   <Navigation />
   <main>
     <Home />
-
-    <section id="projects" class="section bg-slate-50">
-      <div
-        class="lg:w-5/6 w-11/12 max-w-[1750px] h-full mx-auto md:pt-32 pt-24"
-      >
-        <h2
-          class="project-title w-max mx-auto text-slate-700 font-bold md:text-7xl text-4xl text-center font-poppins relative"
-        >
-          Proyectos
-        </h2>
-      </div>
-    </section>
+    <About />
+    <Projects />
   </main>
 </Layout>
-
-<style>
-  .project-title::after {
-    content: "";
-    position: absolute;
-    top: -0.3em;
-    left: 0;
-    width: 1em;
-    height: 0.2em;
-    background-color: rgb(120, 195, 238);
-    border-radius: 35px;
-  }
-</style>

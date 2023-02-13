@@ -6,11 +6,12 @@
 
 @layer base {
   html {
-    @apply font-jetbrains overflow-x-hidden
+    @apply font-jetbrains
   }
 
   body {
     height: 100vh;
+    overflow-x: hidden;
   }
   body.no-scroll {
     overflow-y: hidden ;

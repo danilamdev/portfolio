@@ -1,0 +1,33 @@
+---
+import projects from "../projects.js";
+import Card from "../components/project-card.astro";
+---
+
+<section id="projects" class="bg-slate-50">
+  <div
+    class="lg:w-5/6 w-11/12 max-w-[1450px] h-full mx-auto md:pt-20 pt-24 relative xl:pt-36"
+  >
+    <h2
+      class="project-title mb-14 w-max mx-auto text-slate-700 font-bold md:text-5xl text-4xl text-center font-poppins relative xl:text-7xl xl:mb-20"
+    >
+      Proyectos
+    </h2>
+
+    <div class="grid grid-cols-1 w-11/12 mx-auto gap-4">
+      {projects.map((project) => <Card project={project} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-title::after {
+    content: "";
+    position: absolute;
+    bottom: -0.3em;
+    left: 0;
+    width: 1em;
+    height: 0.2em;
+    background-color: rgb(255, 212, 148);
+    border-radius: 35px;
+  }
+</style>

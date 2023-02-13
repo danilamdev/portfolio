@@ -1,6 +1,6 @@
 export default [
   {
-    image:'', 
+    image:'/list.png', 
     title: 'Supermarket List',
     tags: ['React', 'framer motion', 'tailwind'],
     description: 'Creación de items de una lista utilizando react con animaciones',
@@ -8,15 +8,15 @@ export default [
     siteUrl: 'https://danilamdev-list.netlify.app/'
   },
   {
-    image:'', 
+    image:'/weather.png', 
     title: 'Weather App - Weapi',
     tags: ['React'],
-    description: 'Aplicación de forecast y clima que proporciona el clima según la geolocalización y también utiliza autocomplete de google para dar informacion de clima del lugar buscado',
+    description: 'Aplicación de forecast y clima configurado por la geolocalización y también utiliza autocomplete de google para dar informacion sobre un lugar buscado',
     githubLink:'https://github.com/danilamdev/weapi',
     siteUrl: 'https://weapi.vercel.app/'
   },
   {
-    image:'', 
+    image:'/qr.png', 
     title: 'QR-generator',
     tags: ['Astro', 'tailwind', 'cloudflare'],
     description: 'Generador de QR en base a una url que uno quiera, utilizando las serverless functions de cloudflare',
@@ -24,10 +24,10 @@ export default [
     siteUrl: 'https://qrgenerator-9yd.pages.dev/'
   },
   {
-    image:'', 
+    image:'/coderhouse.png', 
     title: 'Projecto final Coderhouse - Ecommerce',
     tags: ['React', 'tailwind', 'nodejs', 'express', 'firebase', 'mongodb', 'pm2'],
-    description: 'Projecto final de Coderhouse del curso de programación Backend. Se implementó react en el frontend y nodejs en el backend con Express y base de datos tanto mysql como mondodb con mongoose, también utilizando firestore de firabase.',
+    description: 'Projecto final de programación Backend de Coderhouse. React en el front y nodejs, Express, mysql, mondodb y firabase en el Backend.',
     githubLink:'https://github.com/danilamdev/proyecto-final-backend',
     siteUrl: 'unavailable'
   }

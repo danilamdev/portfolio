@@ -19,7 +19,7 @@ export default function MenuBtn(){
         onClick={toggleMenu}
       />
       <div
-        class={`md:hidden menu-bg transition-all w-screen h-screen top-0 left-0 bg-gradient-to-b from-indigo-200 to-indigo-300 fixed ${showMenu ? 'open' : ''}`}
+        class={`md:hidden menu-bg transition-all w-screen h-screen top-0 left-0 bg-slate-800 fixed ${showMenu ? 'open' : ''}`}
       >
           <button onClick={toggleMenu} className='absolute top-3 right-4 rounded-lg z-50 bg-indigo-100'>
             <span>
@@ -32,11 +32,11 @@ export default function MenuBtn(){
           </button>
        
         <ul class="flex flex-col h-3/4 items-end justify-between pr-14 pt-24 relative">
-          <li onClick={toggleMenu} class="block w-full text-right"><a href="#home" class="text-2xl w-full block p-5 text-slate-600">Home</a></li>
-          <li onClick={toggleMenu} class="block w-full text-right"><a href="#about-me" class="text-2xl w-full block p-5 text-slate-600 ">Sobre mi</a></li>
-          <li onClick={toggleMenu} class="block w-full text-right"><a href="#projects" class="text-2xl w-full block p-5 text-slate-600">Proyectos</a></li>
-          <li onClick={toggleMenu} class="block w-full text-right"><a href="#skills" class="text-2xl w-full block p-5 text-slate-600">Habilidades</a></li>
-          <li onClick={toggleMenu} class="block w-full text-right"><a href="#contact" class="text-2xl w-full block p-5 text-slate-600">contacto</a></li>
+          <li onClick={toggleMenu} class="block w-full text-right"><a href="#home" class="text-2xl w-full block p-5 text-slate-50">Home</a></li>
+          <li onClick={toggleMenu} class="block w-full text-right"><a href="#about-me" class="text-2xl w-full block p-5 text-slate-50 ">Sobre mi</a></li>
+          <li onClick={toggleMenu} class="block w-full text-right"><a href="#projects" class="text-2xl w-full block p-5 text-slate-50">Proyectos</a></li>
+          <li onClick={toggleMenu} class="block w-full text-right"><a href="#skills" class="text-2xl w-full block p-5 text-slate-50">Habilidades</a></li>
+          <li onClick={toggleMenu} class="block w-full text-right"><a href="#contact" class="text-2xl w-full block p-5 text-slate-50">contacto</a></li>
         </ul>
       </div>
 
