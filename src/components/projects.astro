@@ -3,17 +3,19 @@ import projects from "../projects.js";
 import Card from "../components/project-card.astro";
 ---
 
-<section id="projects" class="bg-slate-50">
+<section id="projects" class="bg-slate-50 pb-24">
   <div
     class="lg:w-5/6 w-11/12 max-w-[1450px] h-full mx-auto md:pt-20 pt-24 relative xl:pt-36"
   >
     <h2
-      class="project-title mb-14 w-max mx-auto text-slate-700 font-bold md:text-5xl text-4xl text-center font-poppins relative xl:text-7xl xl:mb-20"
+      class="project-title mb-14 w-max mx-auto text-slate-700 font-bold md:text-5xl text-4xl text-center font-poppins relative xl:text-7xl xl:mb-52"
     >
       Proyectos
     </h2>
 
-    <div class="grid grid-cols-1 w-11/12 mx-auto gap-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-1 w-11/12 md:w-8/12 mx-auto gap-4 md:gap-y-7 xl:grid-cols-2 xl:w-full xl:gap-x-12 xl:gap-y-20"
+    >
       {projects.map((project) => <Card project={project} />)}
     </div>
   </div>
