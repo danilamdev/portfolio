@@ -1,6 +1,6 @@
 export default [
   {
-    image:'/list.png', 
+    image:'/list.webp', 
     title: 'Supermarket List',
     tags: ['React', 'framer motion', 'tailwind'],
     description: 'Creación de items de una lista utilizando react con animaciones',
@@ -8,7 +8,7 @@ export default [
     siteUrl: 'https://danilamdev-list.netlify.app/'
   },
   {
-    image:'/weather.png', 
+    image:'/weather.webp', 
     title: 'Weather App - Weapi',
     tags: ['React'],
     description: 'Aplicación de forecast y clima configurado por la geolocalización y también utiliza autocomplete de google para dar informacion sobre un lugar buscado',
@@ -16,7 +16,7 @@ export default [
     siteUrl: 'https://weapi.vercel.app/'
   },
   {
-    image:'/qr.png', 
+    image:'/qr.webp', 
     title: 'QR-generator',
     tags: ['Astro', 'tailwind', 'cloudflare'],
     description: 'Generador de QR en base a una url que uno quiera, utilizando las serverless functions de cloudflare',
@@ -24,7 +24,7 @@ export default [
     siteUrl: 'https://qrgenerator-9yd.pages.dev/'
   },
   {
-    image:'/coderhouse.png', 
+    image:'/coderhouse.webp', 
     title: 'Projecto final Coderhouse - Ecommerce',
     tags: ['React', 'tailwind', 'nodejs', 'express', 'firebase', 'mongodb', 'pm2'],
     description: 'Projecto final de programación Backend de Coderhouse. React en el front y nodejs, Express, mysql, mondodb y firabase en el Backend.',
