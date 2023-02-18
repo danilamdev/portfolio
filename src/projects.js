@@ -25,7 +25,7 @@ export default [
   },
   {
     image:'/coderhouse.webp', 
-    title: 'Projecto final Coderhouse - Ecommerce',
+    title: 'Curso Backend - Ecommerce',
     tags: ['React', 'tailwind', 'nodejs', 'express', 'firebase', 'mongodb', 'pm2'],
     description: 'Projecto final de programación Backend de Coderhouse. React en el front y nodejs, Express, mysql, mondodb y firabase en el Backend.',
     githubLink:'https://github.com/danilamdev/proyecto-final-backend',
