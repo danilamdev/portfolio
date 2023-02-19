@@ -19,7 +19,7 @@ export default function MenuBtn(){
         onClick={toggleMenu}
       />
       <div
-        class={`md:hidden menu-bg transition-all w-screen h-screen top-0 left-0 bg-slate-800 fixed ${showMenu ? 'open' : ''}`}
+        class={`lg:hidden menu-bg transition-all w-screen h-screen top-0 left-0 bg-slate-800 fixed ${showMenu ? 'open' : ''}`}
       >
           <button onClick={toggleMenu} className='absolute top-3 right-4 rounded-lg z-50 bg-indigo-100'>
             <span>
@@ -40,7 +40,7 @@ export default function MenuBtn(){
         </ul>
       </div>
 
-      <label role="button" for="menu-check" class="md:hidden">
+      <label role="button" for="menu-check" class="lg:hidden">
         <div class="flex flex-col w-6 h-6 justify-evenly">
           <div class="h-[2px] w-3 mx-auto rounded-full bg-slate-600"></div>
           <div class="h-[2px] w-5 rounded-full bg-slate-600"></div>

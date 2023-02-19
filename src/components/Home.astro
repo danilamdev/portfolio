@@ -4,8 +4,13 @@ import blob from "/blob1.svg";
 import Shadows from "../components/shadows.astro";
 ---
 
-<section id="home" class="section section-home">
+<section id="home" class="section section-home overflow-x-hidden">
   <Shadows />
+  <div
+    class="absolute hidden lg:block 2xl:text-[800px] text-slate-50 mix-blend-multiply -bottom-32 -right-20 z-10 overflow-hidden"
+  >
+    <p>DEV</p>
+  </div>
   <div
     class="lg:w-5/6 w-11/12 2xl:max-w-[1450px] xl:max-w-[1000px] lg:max-w-[1000px] pt-20 md:pt-52 m-auto grid lg:grid-cols-[2fr_1fr] grid-cols-1 gap-1"
   >
@@ -58,7 +63,7 @@ import Shadows from "../components/shadows.astro";
 
     <div class="right-side lg:flex hidden xl:justify-end">
       <div
-        class="image-me z-20 2xl:w-96 w-64 border-none 2xl:h-[600px] h-[300px] my-auto border rounded-xl relative"
+        class="image-me z-20 2xl:w-96 w-64 border-none 2xl:h-[600px] h-[300px] my-auto rounded-xl relative"
       >
         <img
           src={blob}
