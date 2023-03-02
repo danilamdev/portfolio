@@ -15,7 +15,7 @@ import MenuBtn from "./MenuBtn";
       ><img src={logo} alt="imagen del logo del sitio" class="w-9" />
     </a>
     <ul
-      class="relative lg:flex lg:justify-between hidden max-w-2xl md:w-[40%] w-1/2 h-full items-center text-slate-700 2xl:text-lg xl:text-sm md:text-xs"
+      class="desktop-nav relative lg:flex lg:justify-between hidden max-w-2xl md:w-[40%] w-1/2 h-full items-center text-slate-700 2xl:text-lg xl:text-sm md:text-xs"
     >
       <li>
         <a href="#home" class="active hover:text-teal-500">Home</a>
@@ -56,25 +56,56 @@ import MenuBtn from "./MenuBtn";
 <script>
   const list = document.querySelector("ul");
   const indicator = document.querySelector(".indicator") as HTMLDivElement;
-  const anchors = document.querySelectorAll("ul a");
+  const anchors = document.querySelectorAll("ul.desktop-nav a");
+  const sections = document.querySelectorAll("section");
   const firstEL = list.firstElementChild.getBoundingClientRect().width;
   let linkClicked = false;
   indicator.style.width = firstEL + "px";
 
+  function setIndicatorTransition(item) {
+    let elementWidth = item.getBoundingClientRect().width;
+
+    list.querySelector(".active").classList.remove("active");
+    item.classList.add("active");
+    indicator.style.left = item.offsetLeft + "px";
+    indicator.style.width = elementWidth + "px";
+  }
+
   Array.from(anchors).forEach((item: HTMLElement, i: number) => {
     item.addEventListener("click", (e) => {
-      let elementWidth = item.getBoundingClientRect().width;
+      setIndicatorTransition(item);
 
-      list.querySelector(".active").classList.remove("active");
-      item.classList.add("active");
-      indicator.style.left = item.offsetLeft + "px";
-      indicator.style.width = elementWidth + "px";
       linkClicked = true;
 
       setTimeout(() => {
         linkClicked = false;
       }, 500);
     });
+  });
+
+  let options = {
+    rootMargin: "50px",
+    threshold: 0.5,
+  };
+
+  function cb(entries, observer) {
+    const section = entries[0];
+
+    if (linkClicked) return;
+
+    if (section.isIntersecting) {
+      let element = section.target;
+      let link = list.querySelector(
+        `a[href="#${element.id}"]`
+      ) as HTMLAnchorElement;
+      setIndicatorTransition(link);
+    }
+  }
+
+  const observer = new IntersectionObserver(cb, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 </script>
 

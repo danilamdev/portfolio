@@ -1,0 +1,10 @@
+.contact-title::after {
+  content: "";
+  position: absolute;
+  top: -0.2em;
+  right: 0;
+  width: 1em;
+  height: 0.2em;
+  background-color: rgb(121, 132, 233);
+  border-radius: 35px;
+}
