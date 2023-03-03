@@ -57,7 +57,8 @@ function Contact(){
               <label htmlFor="nombre" className='text-slate-700 text-lg'>mensaje</label>
               <textarea resi aria-required required value={message} disabled={loading} name="mensaje" id="mensaje" cols="30" rows="10" placeholder='escribe tu mensaje...' onInput={(e) => setMessage(e.target.value)}  className='bg-slate-50 border border-slate-200 rounded px-2 py-4 focus:outline-indigo-400/40 resize-none  disabled:text-gray-400 placeholder:text-gray-300'></textarea>
             </div>
-            <button disabled={btnDisable} className='bg-slate-800 text-lg text-white w-full rounded-full py-4 disabled:bg-slate-400 hover:bg-slate-700 active:scale-95' type='submit'>
+
+            <button disabled={btnDisable} className='bg-cyan-400 text-lg text-white w-full xl:w-40 mx-auto block rounded-full py-4 disabled:bg-slate-400 hover:bg-cyan-500 active:scale-95' type='submit'>
               <span className='text-lg'>{loading ? 'Enviando...' : 'enviar'}</span>
             </button>
           </form>
