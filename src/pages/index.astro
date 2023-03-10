@@ -8,6 +8,7 @@ import Projects from "../components/projects.astro";
 import Skills from "../components/skills.astro";
 import Navigation from "../components/navigation.astro";
 import Contact from "../components/contact.jsx";
+import Footer from "../components/footer.astro";
 ---
 
 <Layout title="Daniel Lambarri | Portfolio">
@@ -18,5 +19,6 @@ import Contact from "../components/contact.jsx";
     <Projects />
     <Skills />
     <Contact client:load />
+    <Footer />
   </main>
 </Layout>

@@ -6,6 +6,7 @@ function Contact(){
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
 
   let hasNameError = useMemo(() => {
     if(name === '') return false
@@ -15,18 +16,39 @@ function Contact(){
 
   let btnDisable = hasNameError || email === '' || message === ''
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
 
+    // sendEmail()
+    try {
+      const response = await fetch('api/email', {
+        method: 'post',
+        body: JSON.stringify({name, email, message}),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+  
+      const data = await response.json()
+  
+      if(data.status === 'sent'){
+        setIsSuccess(true)
+        setName('')
+        setEmail('')
+        setMessage('')
+        setLoading(false)
+      }  
+    } catch (error) {
+      console.log(error)
+    } 
+    
     setTimeout(() => {
-      setName('')
-      setEmail('')
-      setMessage('')
-      setLoading(false)
+      setIsSuccess(false)
     }, 2000);
     console.log({name, email, message})
   }
+
 
   return (
     <section id="contact" class="bg-white py-24 xl:py-36">
@@ -58,12 +80,20 @@ function Contact(){
               <textarea resi aria-required required value={message} disabled={loading} name="mensaje" id="mensaje" cols="30" rows="10" placeholder='escribe tu mensaje...' onInput={(e) => setMessage(e.target.value)}  className='bg-slate-50 border border-slate-200 rounded px-2 py-4 focus:outline-indigo-400/40 resize-none  disabled:text-gray-400 placeholder:text-gray-300'></textarea>
             </div>
 
-            <button disabled={btnDisable} className='bg-cyan-400 text-lg text-white w-full xl:w-40 mx-auto block rounded-full py-4 disabled:bg-slate-400 hover:bg-cyan-500 active:scale-95' type='submit'>
-              <span className='text-lg'>{loading ? 'Enviando...' : 'enviar'}</span>
+            <button disabled={btnDisable} className='bg-cyan-400 text-lg text-white w-full xl:w-40 mx-auto rounded-full py-4 h-14 disabled:bg-slate-400 hover:bg-cyan-500 active:scale-95 flex items-center justify-center gap-10' type='submit'>
+              
+             {loading && <div className="spinner w-5 h-5"></div>}   
+             
+              <span className={`text-lg xl:${loading ? 'hidden' : 'block'}`}>{loading ? 'Enviando...' : 'enviar'}</span>
             </button>
+
+            <p className='text-center block p-12'>o comunicate por 
+              <a className='text-green-500' href='https://wa.me/+5491167231003' target='_blank'> whatapp</a>
+            </p>
           </form>
-        
       </div>
+
+      {isSuccess && <p className='fixed bg-green-100 text-green-600 p-2 px-6 rounded text-lg bottom-40 z-50 left-2/4 -translate-x-20 '><strong className='text-2xl'>✓</strong> email enviado!</p>}
       
     </section>
   )
