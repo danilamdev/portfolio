@@ -4,7 +4,7 @@ import blob from "/blob1.svg";
 import Shadows from "../components/shadows.astro";
 ---
 
-<section id="home" class="section section-home overflow-x-hidden">
+<section id="home" class="section section-home overflow-x-hidden relative">
   <Shadows />
 
   <div
@@ -51,12 +51,12 @@ import Shadows from "../components/shadows.astro";
           id="mybtn"
           href="https://drive.google.com/file/d/1u2hjxGtpr0okl9LhMhjjevRkppVHIGDf/view?usp=share_link"
           target="_blank"
-          class="group flex justify-center gap-2 text-sm 2xl:text-lg active:scale-95 text-center bg-teal-400 py-3 rounded-xl text-white transition-all"
+          class="group flex justify-center items-center gap-2 text-sm 2xl:text-lg active:scale-95 text-center bg-teal-400 py-3 rounded-xl text-white transition-all"
         >
           <span class="animate-icon group-hover:animate-[wiggle_1s_forwards]">
             <DownloadIcon />
           </span>
-          <span class="text-black">Descargar cv</span>
+          <span class="text-teal-900 font-bold">Descargar cv</span>
         </a>
       </div>
     </div>
@@ -78,6 +78,16 @@ import Shadows from "../components/shadows.astro";
         />
       </div>
     </div>
+  </div>
+
+  <div class="absolute bottom-20 left-2/4 -translate-x-2/4">
+    <lottie-player
+      src="https://assets9.lottiefiles.com/packages/lf20_P4RBQZ.json"
+      background="transparent"
+      speed="1"
+      class="xl:w-24 lg:w-20 w-16"
+      loop
+      autoplay></lottie-player>
   </div>
 </section>
 

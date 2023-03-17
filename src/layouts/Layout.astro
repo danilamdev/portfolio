@@ -119,9 +119,9 @@ const { title } = Astro.props;
           gsap.from(element, {
             scrollTrigger: element,
             opacity: 0,
-            y: 40,
-            duration: 0.5,
-            ease: "power4.easeOut",
+            y: 70,
+            duration: 1.5,
+            ease: "elastic.out(1, 0.4)",
           });
         }
       );

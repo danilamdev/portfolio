@@ -4,7 +4,7 @@ const { project } = Astro.props;
 
 <article
   id="card-project"
-  class="w-full bg-white flex flex-col md:flex-row md:h-[25rem] xl:h-[30rem] h-[600px] rounded-xl overflow-hidden pb-10 md:pb-0 hover:shadow-lg hover:shadow-indigo-200/50 transition-all hover:scale-[1.01]"
+  class="w-full bg-white flex flex-col md:flex-row md:h-[25rem] xl:h-[30rem] h-[600px] rounded-xl overflow-hidden pb-10 md:pb-0 hover:shadow-lg hover:shadow-indigo-200/50 transition-all"
 >
   <img
     src={project.image}
@@ -94,5 +94,9 @@ const { project } = Astro.props;
     color: rgb(187, 81, 143);
     border-radius: 20px;
     padding-inline: 5px;
+  }
+
+  #card-project:hover {
+    transform: scale(1.05) !important;
   }
 </style>
