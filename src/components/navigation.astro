@@ -11,10 +11,11 @@ import MenuBtn from "./MenuBtn";
   <nav
     class="lg:w-5/6 w-11/12 max-w-[1450px] mx-auto h-full flex justify-between items-center"
   >
-    <a href="#home"
+    <a href="#home" id="mylogo"
       ><img src={logo} alt="imagen del logo del sitio" class="w-9" />
     </a>
     <ul
+      id="navlinks"
       class="desktop-nav relative lg:flex lg:justify-between hidden max-w-2xl md:w-[40%] w-1/2 h-full items-center text-slate-700 2xl:text-lg xl:text-sm md:text-xs"
     >
       <li>
@@ -36,12 +37,14 @@ import MenuBtn from "./MenuBtn";
       class="flex items-center gap-4 md:w-20 w-32 h-full justify-between md:gap-2"
     >
       <a
+        id="social-btn"
         href="https://github.com/danilamdev/"
         class="w-6 github relative"
         target="_blank"
         ><img class="w-6" src={github} alt="imagen de icono de github" /></a
       >
       <a
+        id="social-btn"
         href="https://www.linkedin.com/in/danilamdev/"
         target="_blank"
         class="w-6 linkedin relative"
@@ -88,7 +91,7 @@ import MenuBtn from "./MenuBtn";
     threshold: 0.5,
   };
 
-  function cb(entries, observer) {
+  function cb(entries) {
     const section = entries[0];
 
     if (linkClicked) return;

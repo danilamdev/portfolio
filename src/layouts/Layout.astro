@@ -68,6 +68,64 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
+
+    <script>
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from("#navlinks li", {
+        opacity: 0,
+        stagger: 0.3,
+        duration: 3,
+        ease: "elastic.out(1, 0.4)",
+      });
+
+      gsap.from("#social-btn", {
+        opacity: 0,
+        y: -40,
+        stagger: 0.8,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.4)",
+      });
+
+      gsap.from("#mylogo", {
+        scale: 0,
+        duration: 0.5,
+      });
+
+      gsap.from("#mypic", {
+        opacity: 0,
+        scale: 0.5,
+        x: 75,
+        ease: "elastic.out(1, 0.4)",
+        duration: 1.5,
+        rotate: 10,
+      });
+
+      gsap.from("#about-pic", {
+        scrollTrigger: "#about-pic",
+        opacity: 0,
+        scale: 0.5,
+        x: 75,
+        ease: "elastic.out(1, 0.4)",
+        duration: 1.5,
+        rotate: -10,
+      });
+
+      Array.from(document.querySelectorAll("#card-project")).forEach(
+        (element) => {
+          gsap.from(element, {
+            scrollTrigger: element,
+            opacity: 0,
+            y: 40,
+            duration: 0.5,
+            ease: "power4.easeOut",
+          });
+        }
+      );
+    </script>
   </body>
 </html>
 

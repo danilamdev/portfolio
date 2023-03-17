@@ -3,12 +3,14 @@ import sendgrid from '@sendgrid/mail'
 
 
 export function sendEmail({apikey, name, email, message}){
+  const senderEmail = process.env.SENDER_EMAIL 
+  const recieverEmail = process.env.RECIEVER_EMAIL
 
   sendgrid.setApiKey(apikey)
 
   const msg = {
-    to: 'dalambarri@gmail.com', // Change to your recipient
-    from: 'dalambarri@live.com', // Change to your verified sender
+    to: recieverEmail, // Change to your recipient
+    from: senderEmail, // Change to your verified sender
     subject: `PORTFOLIO mensaje | from ${name} - ${email}`,
     text: 'prueba de email',
     html: `

@@ -1,6 +1,8 @@
 import '../styles/contact.css'
 import {useMemo, useState} from 'preact/hooks'
 
+import { sendMail } from '../services/fetchEmailApi'
+
 function Contact(){
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -22,26 +24,20 @@ function Contact(){
 
     // sendEmail()
     try {
-      const response = await fetch('api/email', {
-        method: 'post',
-        body: JSON.stringify({name, email, message}),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      const response = await sendMail({name, email, message})
   
-      const data = await response.json()
-  
-      if(data.status === 'sent'){
+      if(response.status === 'sent'){
         setIsSuccess(true)
         setName('')
         setEmail('')
         setMessage('')
-        setLoading(false)
+        
       }  
     } catch (error) {
       console.log(error)
-    } 
+    } finally {
+      setLoading(false)
+    }
     
     setTimeout(() => {
       setIsSuccess(false)
@@ -80,7 +76,7 @@ function Contact(){
               <textarea resi aria-required required value={message} disabled={loading} name="mensaje" id="mensaje" cols="30" rows="10" placeholder='escribe tu mensaje...' onInput={(e) => setMessage(e.target.value)}  className='bg-slate-50 border border-slate-200 rounded px-2 py-4 focus:outline-indigo-400/40 resize-none  disabled:text-gray-400 placeholder:text-gray-300'></textarea>
             </div>
 
-            <button disabled={btnDisable} className='bg-cyan-400 text-lg text-white w-full xl:w-40 mx-auto rounded-full py-4 h-14 disabled:bg-slate-400 hover:bg-cyan-500 active:scale-95 flex items-center justify-center gap-10' type='submit'>
+            <button disabled={btnDisable} className='bg-cyan-400 text-lg text-white w-full xl:w-40 mx-auto rounded-full py-4 h-14 disabled:bg-slate-400 disabled:active:scale-100 hover:bg-cyan-500 active:scale-95 flex items-center justify-center gap-10' type='submit'>
               
              {loading && <div className="spinner w-5 h-5"></div>}   
              
