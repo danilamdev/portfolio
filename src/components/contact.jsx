@@ -50,7 +50,7 @@ function Contact(){
   useEffect(()=> {
    
     if(!isSuccess) return
-    console.log('use Effect')
+
     const anim = gsap.to("#success-msg", {
       opacity: 1,
       scale: 1,
@@ -64,7 +64,6 @@ function Contact(){
     return () => anim.kill('#success-msg')
   },[isSuccess])
 
-  console.log('success', isSuccess)
   return (
     <section id="contact" class="bg-white py-24 xl:py-36">
       <h2
