@@ -90,8 +90,8 @@ function Contact(){
             </div>
           
             <div className='flex flex-col gap-y-2 mb-12'>
-              <label htmlFor="nombre" className='text-slate-700 text-lg'>mensaje</label>
-              <textarea resi aria-required required value={message} disabled={loading} name="mensaje" id="mensaje" cols="30" rows="10" placeholder='escribe tu mensaje...' onInput={(e) => setMessage(e.target.value)}  className='bg-slate-50 border border-slate-200 rounded px-2 py-4 focus:outline-indigo-400/40 resize-none  disabled:text-gray-400 placeholder:text-gray-300'></textarea>
+              <label htmlFor="mensaje" className='text-slate-700 text-lg'>mensaje</label>
+              <textarea aria-required required value={message} disabled={loading} name="mensaje" id="mensaje" cols="30" rows="10" placeholder='escribe tu mensaje...' onInput={(e) => setMessage(e.target.value)}  className='bg-slate-50 border border-slate-200 rounded px-2 py-4 focus:outline-indigo-400/40 resize-none  disabled:text-gray-400 placeholder:text-gray-300'></textarea>
             </div>
 
             <button disabled={btnDisable} className='bg-cyan-400 text-lg text-white w-full xl:w-40 mx-auto rounded-full py-4 h-14 disabled:bg-slate-300 disabled:active:scale-100 hover:bg-cyan-500 active:scale-95 flex items-center justify-center gap-10' type='submit'>
