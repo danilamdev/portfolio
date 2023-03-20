@@ -67,9 +67,9 @@ function Contact(){
   return (
     <section id="contact" class="bg-white py-24 xl:py-36">
       <h2
-        class="contact-title mb-24 text-slate-700 font-bold w-max mx-auto text-4xl text-center font-poppins relative md:text-5xl xl:text-6xl 2xl:text-7xl xl:mb-32 2xl:mb-52 lg:mb-32"
+        class="contact-title max-w-4xl w-11/12 mb-24 text-slate-700 font-bold  mx-auto text-4xl text-center font-poppins relative md:text-5xl xl:text-5xl 2xl:text-6xl xl:mb-32 2xl:mb-52 lg:mb-32"
       >
-        Contactame
+        ¿Querés contactarte conmigo?
       </h2>
 
       <div className='w-full px-6 xl:p-0 lg:w-10/12 max-w-7xl m-auto xl:grid xl:grid-cols-2 shadow-xl xl:shadow-cyan-100 rounded-xl overflow-hidden'>
