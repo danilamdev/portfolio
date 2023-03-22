@@ -9,7 +9,7 @@ function Contact(){
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(true)
 
 
   let hasNameError = useMemo(() => {
@@ -108,7 +108,7 @@ function Contact(){
       </div>
 
 
-      {isSuccess && <p id='success-msg' className='fixed bg-slate-700 text-white px-8 py-6 rounded-lg text-md bottom-40 z-50 left-2/4 -translate-x-20 flex items-center gap-4 font-poppins scale-0 opacity-0'><strong className='text-2xl text-green-400 border-2 border-green-400 px-2 rounded-full'>✓</strong> email enviado!</p>}
+      {isSuccess && <p id='success-msg' className='fixed bg-slate-700 text-white px-8 py-6 rounded-lg text-md bottom-40 z-50 left-2/4 -translate-x-1/2 flex items-center gap-4 font-poppins scale-0 opacity-0'><strong className='text-2xl text-green-400 border-2 border-green-400 px-2 rounded-full'>✓</strong> email enviado!</p>}
 
     </section>
   )
