@@ -9,7 +9,7 @@ function Contact(){
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(true)
+  const [isSuccess, setIsSuccess] = useState(false)
 
 
   let hasNameError = useMemo(() => {
