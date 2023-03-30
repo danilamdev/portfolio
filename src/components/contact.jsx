@@ -102,7 +102,7 @@ function Contact(){
             </button>
 
             <p  className='text-center block p-12'>o comunicate por 
-              <a className='text-green-500' href='https://wa.me/+5491167231003' target='_blank'> whatapp</a>
+              <a className='text-green-500' href='https://wa.me/+5491167231003' target='_blank'> whatsapp</a>
             </p>
           </form>
       </div>
