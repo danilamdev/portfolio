@@ -30,5 +30,13 @@ export default [
     description: 'Projecto final de programación Backend de Coderhouse. React en el front y nodejs, Express, mysql, mondodb y firabase en el Backend.',
     githubLink:'https://github.com/danilamdev/proyecto-final-backend',
     siteUrl: 'unavailable'
+  },
+  {
+    image:'/translate.avif', 
+    title: 'React translate',
+    tags: ['React', 'typescript'],
+    description: 'Aplicación de traducción de idiomas basado en google translate',
+    githubLink:'https://github.com/danilamdev/react-translate-now',
+    siteUrl: 'https://react-translate-now.vercel.app/'
   }
 ]
